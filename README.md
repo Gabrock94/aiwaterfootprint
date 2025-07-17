@@ -25,3 +25,7 @@ Displays:
 # Example screenshot
 
 <img title="Screenshot" alt="Example of the plugin in use" src="/screen.png">
+
+## Aknowledments
+
+Waves animation from Goodkatz <https://codepen.io/goodkatz>.

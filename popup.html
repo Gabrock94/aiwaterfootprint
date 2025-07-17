@@ -16,7 +16,7 @@
       font-family: 'Inter', sans-serif;
       background-color: #f0f4f8; /* Light background */
       color: #334155; /* Darker text for contrast */
-      padding: 1rem; /* Consistent padding */
+      /* padding: 1rem; /* Consistent padding */
       width: 280px; /* Slightly wider for better layout */
       box-sizing: border-box; /* Include padding in width calculation */
     }
@@ -26,10 +26,53 @@
       margin-bottom: 1.5rem; /* More space below title */
       text-align: center; /* Center the title */
     }
+
+    .waves {
+    position:relative;
+    width: 100%;
+    height:5vh;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    min-height: 30px;
+    max-height:150px;
+  }
+
+  #padded{
+    padding: 1rem;
+  }
+  /* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
   </style>
 </head>
 <body>
-  <h3 class="text-3xl font-bold text-blue-500 mb-6 text-center">
+  <div id='padded'>
+    <h3 class="text-3xl font-bold text-blue-500 mb-6 text-center">
     <i class="fas fa-tint text-blue-500 mr-2"></i>AI Water Footprint
   </h3>
 
@@ -43,8 +86,38 @@
     <p id="water-usage" class="mt-2 text-justify  text-l font-bold text-blue-600">
       <i class="fas fa-calculator mr-1"></i>Calculating water usage...
     </p>
+
+
+    <!--Waves end-->
+
     </div>
     <p class="text-xs text-center text-gray-400">Made with 💙 to promote sustainable AI usage.</p>
+  </div></div>
+    <div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(37,130,240,0.7" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(37,130,240,0.5)" />
+    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(37,130,240,0.3)" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(37,130,240,0.2)" />
+    </g>
+
+    </svg>
+    </div>
+    <div>
+      
+    </div>
   <script src="popup.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+<!--Content ends-->
