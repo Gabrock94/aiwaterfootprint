@@ -68,7 +68,7 @@ function waterUsageMessage(queryCount) {
     comparison = `A significant amount, comparable to several household water uses (${liters.toFixed(0)} L)`;
   }
 
-  return `<strong>Your estimated daily water footprint from AI queries is about ${liters.toFixed(2)} liters.</strong><br> ${comparison}.`;
+  return `<strong>Your estimated daily water footprint from AI queries is ~${liters.toFixed(2)} liters.</strong><br> ${comparison}.`;
 }
 
 function updateWaterUsageDisplay(queryCount) {

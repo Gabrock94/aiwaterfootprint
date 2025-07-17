@@ -19,3 +19,7 @@ Displays:
 - [x] Badge on the extension icon shows daily usage
 
 - [x] Runs locally and stores data in browser's local storage
+
+# Example screenshot
+
+<img title="Screenshot" alt="Example of the plugin in use" src="/screen.png">
