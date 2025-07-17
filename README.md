@@ -1,3 +1,5 @@
+# AI Water Footprint
+
 This browser extension tracks how many prompts you submit to AI services like ChatGPT and Gemini, and estimates the water consumption associated with these queries.
 
 Features
