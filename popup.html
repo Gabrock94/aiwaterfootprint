@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM Water Tracker</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="tailwind.js"></script>
+  <!-- Google Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons (optional, but nice for a water drop) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Custom styles for Inter font and overall body */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f4f8; /* Light background */
+      color: #334155; /* Darker text for contrast */
+      padding: 1rem; /* Consistent padding */
+      width: 280px; /* Slightly wider for better layout */
+      box-sizing: border-box; /* Include padding in width calculation */
+    }
+    h3 {
+      font-weight: 700; /* Bold for title */
+      color: #1e293b; /* Even darker for title */
+      margin-bottom: 1.5rem; /* More space below title */
+      text-align: center; /* Center the title */
+    }
+  </style>
+</head>
+<body>
+  <h3 class="text-3xl font-bold text-blue-500 mb-6 text-center">
+    <i class="fas fa-tint text-blue-500 mr-2"></i>AI Water Footprint
+  </h3>
+
+    <div class="space-y-4">
+    <div class="bg-white p-4 rounded-lg shadow-md flex flex-col items-center">
+      <div class="count text-gray-800 text-l font-medium text-justify" id="today-count">Today</div>
+      <div class="text-gray-600 mb-2 mt-2 text-justify" id="count-by-provider"></div>
+
+
+    <!-- Water Usage Summary -->
+    <p id="water-usage" class="mt-2 text-justify  text-l font-bold text-blue-600">
+      <i class="fas fa-calculator mr-1"></i>Calculating water usage...
+    </p>
+    </div>
+  <script src="popup.js"></script>
+</body>
+</html>

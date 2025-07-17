@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "AI Water Footprint",
+  "version": "1.0",
+  "description": "Counts how many prompts you've submitted to AI models, and makes an estimate of the water consumption.",
+  "permissions": ["storage", "tabs"],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://chat.openai.com/*",
+        "*://chatgpt.com/*",
+        "*://gemini.google.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
