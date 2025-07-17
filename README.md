@@ -6,6 +6,7 @@ Counts prompts submitted to:
 
 - [x] ChatGPT (chat.openai.com, chatgpt.com)
 - [x] Google Gemini (gemini.google.com)
+- [ ] Claude
 
 Displays:
 
