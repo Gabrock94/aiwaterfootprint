@@ -17,6 +17,7 @@ Displays:
 - [x] Cumulative query count
 
 - [x] Estimated water consumption
+  - [ ] needs to be updated with real data (e.g. https://arxiv.org/abs/2505.09598)  
 
 - [x] Badge on the extension icon shows daily usage
 
