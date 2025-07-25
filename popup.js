@@ -34,7 +34,17 @@ if (totalTodayCount > 0) {
     providerCounts.push(`Claude ${claudeCount === 1 ? "1 time" : `${claudeCount} times`}`);
   }
 
-  document.getElementById("count-by-provider").innerText =  `You have engaged with ${providerCounts.join(" and ")}.`;
+  function formatProviderCounts(providerCounts) {
+    if (providerCounts.length === 0) return "";
+    if (providerCounts.length === 1) return providerCounts[0];
+    if (providerCounts.length === 2) return providerCounts.join(" and ");
+    return providerCounts.slice(0, -1).join(", ") + ", and " + providerCounts.slice(-1);
+  }
+
+  // Example usage:
+  const formatted = formatProviderCounts(providerCounts);
+  document.getElementById("count-by-provider").innerText = `You have engaged with ${formatted}.`;
+
 } else {
   document.getElementById("today-count").innerText =
     `You haven't interacted with AI models yet today.`;
