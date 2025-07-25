@@ -3,14 +3,9 @@ const today = new Date().toISOString().slice(0, 10);
 function updateDisplay(usage) {
   const gpt = usage.gpt || { total: 0, daily: {} };
   const gemini = usage.gemini || { total: 0, daily: {} };
-
-  // document.getElementById("gpt-count").innerText =
-  //   // `Today: ${gpt.daily[today] || 0} Total: ${gpt.total}`;
-  //   `Today: ${gpt.daily[today] || 0}`; // Total: ${gpt.total}`;
-
-  // document.getElementById("gemini-count").innerText =
-  //   `Today: ${gemini.daily[today] || 0}, Total: ${gemini.total}`;
-
+  const claude = usage.claude || { total: 0, daily: {} };
+  console.log(claude);
+  console.log(gpt);
   let totalTodayCount = 0;
 
   for (const provider in usage) {
@@ -18,10 +13,32 @@ function updateDisplay(usage) {
     totalTodayCount += dailyCounts[today] || 0;
   }
   
+if (totalTodayCount > 0) {
+  const timeText = totalTodayCount === 1 ? "1 time" : `${totalTodayCount} times`;
   document.getElementById("today-count").innerText =
-    `Today, you have interacted with AI models ${totalTodayCount || 0} different times.`;
-  document.getElementById("count-by-provider").innerText = 
-    `You have engaged with ChatGPT ${gpt.daily[today] || 0} times, and with Gemini ${gemini.daily[today] || 0} times.`;
+    `Today, you have interacted with AI models ${timeText}.`;
+
+  
+  const providerCounts = [];
+  const gptCount = gpt.daily[today] || 0;
+  const geminiCount = gemini.daily[today] || 0;
+  const claudeCount = claude.daily[today] || 0;
+
+  if (gptCount > 0) {
+    providerCounts.push(`ChatGPT ${gptCount === 1 ? "1 time" : `${gptCount} times`}`);
+  }
+  if (geminiCount > 0) {
+    providerCounts.push(`Gemini ${geminiCount === 1 ? "1 time" : `${geminiCount} times`}`);
+  }
+  if (claudeCount > 0) {
+    providerCounts.push(`Claude ${claudeCount === 1 ? "1 time" : `${claudeCount} times`}`);
+  }
+
+  document.getElementById("count-by-provider").innerText =  `You have engaged with ${providerCounts.join(" and ")}.`;
+} else {
+  document.getElementById("today-count").innerText =
+    `You haven't interacted with AI models yet today.`;
+}
 
   updateWaterUsageDisplay(totalTodayCount);
 }
@@ -57,18 +74,29 @@ function estimateDailyWaterLiters(queryCount) {
 function waterUsageMessage(queryCount) {
   const liters = estimateDailyWaterLiters(queryCount);
 
-  let comparison;
-  if (liters < 1) {
-    comparison = `About the same as drinking a glass of water (${liters.toFixed(2)} L)`;
-  } else if (liters < 10) {
-    comparison = `About the same as a short 5-minute shower (${liters.toFixed(1)} L)`;
-  } else if (liters < 50) {
-    comparison = `About the same as washing dishes by hand (${liters.toFixed(0)} L)`;
-  } else {
-    comparison = `A significant amount, comparable to several household water uses (${liters.toFixed(0)} L)`;
-  }
+const comparisons = [
+  { max: 0.005, label: "a teaspoon of water 🫖" },
+  { max: 0.015, label: "a tablespoon of water 🥄" },
+  { max: 0.25, label: "watering a small plant 🌿" },
+  { max: 0.5, label: "brushing your teeth with the tap off 🪥" },
+  { max: 1, label: "drinking a large glass of water 🥛" },
+  { max: 3, label: "washing your hands quickly 🧼" },
+  { max: 6, label: "a modern toilet flush 🚽" },
+  { max: 10, label: "a 1-minute shower 🚿" },
+  { max: 30, label: "washing dishes by hand 🍽️" },
+  { max: 60, label: "a short 5–7 minute shower 🚿" },
+  { max: 90, label: "a full load in the washing machine 🧺" },
+  { max: 150, label: "a filled bathtub 🛁" },
+  { max: 300, label: "watering a medium garden 🌱" },
+  { max: 500, label: "washing a car with a hose 🚗" }
+];
 
-  return `<strong>Your estimated daily water footprint from AI queries is ~${liters.toFixed(2)} liters.</strong><br> ${comparison}.`;
+
+  // Find the best match
+  const match = comparisons.find(c => liters <= c.max) || 
+                { label: "several high-usage household tasks combined" };
+
+  return `<strong>Your estimated daily water footprint from AI queries is about ${liters.toFixed(2)} liters.</strong><br> It is roughly equivalent to ${match.label}.`;
 }
 
 function updateWaterUsageDisplay(queryCount) {
