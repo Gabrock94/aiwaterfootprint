@@ -28,4 +28,6 @@ Displays:
 
 ## Aknowledments
 
+Water consumption estimates are taken from: https://arxiv.org/pdf/2505.09598 
+
 Waves animation from Goodkatz <https://codepen.io/goodkatz>.
