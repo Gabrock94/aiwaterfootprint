@@ -15,7 +15,7 @@ AI models require substantial computational resources — and surprisingly, **a 
 
 ✅ **Displays:**
 - [x] Daily query count  
-- [] Cumulative query count  
+- [ ] Cumulative query count  
 - [x] Estimated water consumption
   - [ ] *(based on up-to-date academic references)*  
 - [x] Contextual comparisons to real-world water use (e.g., "equivalent to a short shower 🚿")
