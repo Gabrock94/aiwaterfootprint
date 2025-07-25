@@ -26,7 +26,7 @@
 
 ## 📸 Example Screenshot
 
-<img title="Screenshot" alt="Example of the plugin in use" src="/screen.png" width="600">
+<img title="Screenshot" alt="Example of the plugin in use" src="/screen.png">
 
 ---
 
