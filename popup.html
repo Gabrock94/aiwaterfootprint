@@ -27,6 +27,26 @@
       text-align: center; /* Center the title */
     }
 
+    /* Animations */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(6px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulseOnce {
+      0% { transform: translate(-50%, -50%) scale(1); }
+      40% { transform: translate(-50%, -50%) scale(1.15); }
+      100% { transform: translate(-50%, -50%) scale(1); }
+    }
+    @keyframes popOnce {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    .card-enter { animation: fadeInUp .35s ease both; }
+    .fact-fade { transition: opacity .3s ease; }
+    .thumb-pulse { animation: pulseOnce .4s ease; }
+    .badge-pop { animation: popOnce .25s ease; }
+
     .waves {
     position:relative;
     width: 100%;
@@ -77,7 +97,7 @@
   </h3>
 
     <div class="space-y-4">
-    <div class="bg-white p-4 rounded-lg shadow-md flex flex-col items-center">
+    <div class="bg-white p-4 rounded-lg shadow-md flex flex-col items-center card-enter">
       <div class="count text-gray-800 text-l font-medium text-justify" id="today-count">Today</div>
       <div class="text-gray-600 mb-2 mt-2 text-justify" id="count-by-provider"></div>
 
@@ -87,6 +107,27 @@
       <i class="fas fa-calculator mr-1"></i>Calculating water usage...
     </p>
 
+    <!-- Fun Fact -->
+    <p id="fun-fact" class="mt-1 text-xs text-gray-600 text-justify fact-fade"></p>
+
+    <!-- Progress Bar (redesigned, log-scale) -->
+    <div class="w-full mt-3">
+      <div class="flex items-center justify-between mb-1">
+        <span class="text-xs text-gray-500">Today’s water footprint</span>
+        <span id="usage-badge" class="text-xs font-semibold px-2 py-0.5 rounded-full" style="background: #e0f2fe; color: #075985;">Low</span>
+      </div>
+      <div id="usage-track" class="relative w-full h-3 rounded-full" style="background:#e5e7eb;">
+        <div id="usage-fill" class="absolute left-0 top-0 h-3 rounded-full" style="width:0%; background: linear-gradient(90deg,#38bdf8,#34d399);"></div>
+        <div id="usage-thumb" class="absolute top-1/2" style="left:0%; transform: translate(-50%, -50%); width:10px; height:10px; border-radius:9999px; background:#0ea5e9; box-shadow:0 0 0 2px rgba(255,255,255,.9);"></div>
+      </div>
+      <div class="flex justify-between text-[10px] text-gray-400 mt-1" id="usage-scale">
+        <span>0 L</span>
+        <span>1 L</span>
+        <span>10 L</span>
+        <span>100 L</span>
+      </div>
+    </div>
+
 
     <!--Waves end-->
 
@@ -94,16 +135,16 @@
     <p class="text-xs text-center text-gray-400">Made with 💙 to promote sustainable AI usage. <a href="" target="_blank" style="color:#334155; text-decoration: underline;">Learn more</a></p>
   </div></div>
     <div>
-    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    <svg id="wave-svg" class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
     <defs>
     <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
     </defs>
-    <g class="parallax">
-    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(37,130,240,0.7" />
-    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(37,130,240,0.5)" />
-    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(37,130,240,0.3)" />
-    <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(37,130,240,0.2)" />
+    <g class="parallax" id="parallax-group">
+    <use id="wave1" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(37,130,240,0.7)" />
+    <use id="wave2" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(37,130,240,0.5)" />
+    <use id="wave3" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(37,130,240,0.3)" />
+    <use id="wave4" xlink:href="#gentle-wave" x="48" y="7" fill="rgba(37,130,240,0.2)" />
     </g>
 
     </svg>
