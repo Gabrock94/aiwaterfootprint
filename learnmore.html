@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI and Water Consumption</title>
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
+      color: #333;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 3rem;
+    }
+    .section {
+      padding: 4rem 1rem;
+    }
+    .card {
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+    }
+    .card-body {
+      padding: 2rem;
+    }
+    h2 {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    footer {
+      background: #212529;
+      color: #ddd;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    /* Button for menu */
+    .menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1050;
+      background: #0077b6;
+      color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .menu-btn:hover {
+      background: #00b4d8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu Button -->
+  <button class="menu-btn" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+    ☰
+  </button>
+
+  <!-- Offcanvas Sidebar -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#why">💧 Why AI consumes water</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#measure">📊 How do we measure?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#impact">🌍 Impact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <header>
+    <h1>💧 AI and Water Consumption</h1>
+    <p>Understanding the hidden environmental cost of artificial intelligence</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Why AI consumes water -->
+    <section id="why" class="section">
+      <div class="card">
+        <div class="card-body">
+          <h2>Why does AI consume water?</h2>
+          <p>
+            Training and running AI models requires massive computing power in large data centers. 
+            These servers generate significant heat, which must be cooled to avoid damage. 
+            One of the most common cooling methods uses water: chilled water circulates through 
+            cooling systems, absorbing heat and then evaporating or being discharged. 
+          </p>
+          <p>
+            The bigger the AI model, the more servers are required, and the more cooling — and 
+            therefore water — is needed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How we measure -->
+    <section id="measure" class="section">
+      <div class="card">
+        <div class="card-body">
+          <h2>How do we measure this consumption?</h2>
+          <p>
+            Water consumption in AI data centers is typically measured using a metric called 
+            <b>Water Usage Effectiveness (WUE)</b>. 
+          </p>
+          <ul>
+            <li><b>Liters per kWh:</b> How many liters of water are consumed per kilowatt-hour of electricity used.</li>
+            <li><b>Total liters per training run:</b> Estimates for large models can reach millions of liters for a single training cycle.</li>
+            <li><b>Geographic impact:</b> Water use varies greatly depending on whether a data center is located in a water-scarce region.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact -->
+    <section id="impact" class="section">
+      <div class="card">
+        <div class="card-body">
+          <h2>What is the impact?</h2>
+          <p>
+            The environmental impact of AI’s water use is complex. On one hand, advanced AI research 
+            drives innovation that could help manage water resources and fight climate change. 
+            On the other hand, data centers can put stress on local water supplies, particularly 
+            in drought-prone areas. 
+          </p>
+          <p>
+            If unchecked, the increasing demand for AI could significantly contribute to 
+            <b>water scarcity</b>, competing with agriculture and communities. 
+          </p>
+          <p>
+            Transparency from tech companies and the adoption of <b>sustainable cooling methods</b> 
+            — such as air cooling, recycled water, or renewable energy integration — are essential to 
+            minimize this impact.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p> 💅 Written by a programming-enthusiast half-incompetent: Michele Motta</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
