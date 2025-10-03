@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn More - LLM Water Tracker</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="tailwind.js"></script>
+  <!-- Google Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f4f8;
+      color: #334155;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    
+    .waves {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5vh;
+      min-height: 30px;
+      max-height: 150px;
+      z-index: -1;
+    }
+
+    .parallax > use {
+      animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+    }
+    .parallax > use:nth-child(1) {
+      animation-delay: -2s;
+      animation-duration: 7s;
+    }
+    .parallax > use:nth-child(2) {
+      animation-delay: -3s;
+      animation-duration: 10s;
+    }
+    .parallax > use:nth-child(3) {
+      animation-delay: -4s;
+      animation-duration: 13s;
+    }
+    .parallax > use:nth-child(4) {
+      animation-delay: -5s;
+      animation-duration: 20s;
+    }
+    @keyframes move-forever {
+      0% { transform: translate3d(-90px,0,0); }
+      100% { transform: translate3d(85px,0,0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .card-enter { animation: fadeInUp 0.6s ease both; }
+    .card-enter:nth-child(2) { animation-delay: 0.1s; }
+    .card-enter:nth-child(3) { animation-delay: 0.2s; }
+    .card-enter:nth-child(4) { animation-delay: 0.3s; }
+  </style>
+</head>
+<body>
+  <div class="container mx-auto px-6 py-8 max-w-4xl">
+    <!-- Header -->
+    <div class="text-center mb-8 card-enter">
+      <h1 class="text-4xl font-bold text-blue-500 mb-4">
+        <i class="fas fa-tint text-blue-500 mr-3"></i>AI Water Footprint Tracker
+      </h1>
+      <p class="text-lg text-gray-600">Understanding the environmental impact of AI models</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="space-y-6">
+      <!-- What is AI Water Footprint -->
+      <div class="bg-white p-6 rounded-lg shadow-md card-enter">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-droplet text-blue-500 mr-2"></i>What is AI Water Footprint?
+        </h2>
+        <p class="text-gray-600 mb-4">
+          Every time you interact with AI models like ChatGPT, Claude, or Gemini, data centers consume significant amounts of water for cooling servers and generating electricity. This "water footprint" represents the hidden environmental cost of AI interactions.
+        </p>
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <p class="text-blue-800 font-medium">
+            <i class="fas fa-info-circle mr-2"></i>
+            Did you know? A single ChatGPT conversation can consume up to 500ml of water - equivalent to a standard water bottle!
+          </p>
+        </div>
+      </div>
+
+      <!-- How It Works -->
+      <div class="bg-white p-6 rounded-lg shadow-md card-enter">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-cogs text-green-500 mr-2"></i>How Our Tracker Works
+        </h2>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <div class="bg-blue-100 p-2 rounded-full">
+              <i class="fas fa-eye text-blue-600"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-800">Detection</h3>
+              <p class="text-gray-600">Automatically detects when you use AI services like ChatGPT, Claude, Gemini, and others.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="bg-green-100 p-2 rounded-full">
+              <i class="fas fa-calculator text-green-600"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-800">Calculation</h3>
+              <p class="text-gray-600">Estimates water consumption based on model type, query complexity, and data center efficiency.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="bg-purple-100 p-2 rounded-full">
+              <i class="fas fa-chart-line text-purple-600"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-800">Tracking</h3>
+              <p class="text-gray-600">Provides daily summaries and insights to help you understand your AI water footprint.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why It Matters -->
+      <div class="bg-white p-6 rounded-lg shadow-md card-enter">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-leaf text-green-500 mr-2"></i>Why This Matters
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-red-50 p-4 rounded-lg">
+            <h3 class="font-semibold text-red-800 mb-2 flex items-center">
+              <i class="fas fa-exclamation-triangle mr-2"></i>The Problem
+            </h3>
+            <ul class="text-red-700 space-y-1 text-sm">
+              <li>• AI training uses millions of gallons of water</li>
+              <li>• Data centers consume 1% of global electricity</li>
+              <li>• Water scarcity affects 2 billion people globally</li>
+            </ul>
+          </div>
+          <div class="bg-green-50 p-4 rounded-lg">
+            <h3 class="font-semibold text-green-800 mb-2 flex items-center">
+              <i class="fas fa-lightbulb mr-2"></i>The Solution
+            </h3>
+            <ul class="text-green-700 space-y-1 text-sm">
+              <li>• Awareness leads to mindful usage</li>
+              <li>• Choose efficient AI models when possible</li>
+              <li>• Support sustainable AI development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tips for Sustainable AI Usage -->
+      <div class="bg-white p-6 rounded-lg shadow-md card-enter">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-recycle text-blue-500 mr-2"></i>Tips for Sustainable AI Usage
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-3">
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-check-circle text-green-500"></i>
+              <span class="text-gray-700">Be specific in your prompts to reduce iterations</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-check-circle text-green-500"></i>
+              <span class="text-gray-700">Use smaller models for simple tasks</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-check-circle text-green-500"></i>
+              <span class="text-gray-700">Batch multiple questions together</span>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-check-circle text-green-500"></i>
+              <span class="text-gray-700">Consider local AI models when possible</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-check-circle text-green-500"></i>
+              <span class="text-gray-700">Support companies with green data centers</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-check-circle text-green-500"></i>
+              <span class="text-gray-700">Monitor your daily usage patterns</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About -->
+      <div class="bg-white p-6 rounded-lg shadow-md card-enter">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-heart text-red-500 mr-2"></i>About This Project
+        </h2>
+        <p class="text-gray-600 mb-4">
+          This extension was created to raise awareness about the environmental impact of AI usage. By making the "invisible" water consumption visible, we hope to encourage more sustainable AI practices.
+        </p>
+        <div class="flex items-center justify-center space-x-4 pt-4">
+          <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+            <i class="fab fa-github mr-2"></i>View on GitHub
+          </a>
+          <button onclick="window.close()" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors">
+            <i class="fas fa-arrow-left mr-2"></i>Back to Tracker
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center mt-12 pb-20">
+      <p class="text-gray-400">Made with 💙 to promote sustainable AI usage</p>
+    </div>
+  </div>
+
+  <!-- Animated Waves -->
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+       viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(37,130,240,0.7)" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(37,130,240,0.5)" />
+      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(37,130,240,0.3)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(37,130,240,0.2)" />
+    </g>
+  </svg>
+</body>
+</html>
