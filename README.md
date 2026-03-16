@@ -6,7 +6,7 @@ AI models require substantial computational resources — and surprisingly, **a 
 
 ---
 
-## 🚀 Features
+## Features
 
 ✅ **Tracks queries submitted to:**
 - [x] ChatGPT
